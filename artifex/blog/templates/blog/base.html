@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Artifex | Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/trackStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/bodyStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/galleryCurtainStyle.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/eca0eefe21.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-nav="false">
+
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'blog-home' %}" class="nav-branding nav-link"> artifex <i class="fa-solid fa-palette"draggable="false"></i> </a>
+            
+            <ul class="nav-menu">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Profile </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Post </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Home </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Explore </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> About </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Logout </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+        </nav>
+    </header>
+    <script src="{% static 'blog/hamburgerScript.js' %}"></script>
+
+    <!-- add background image / text here which would be moved  -->
+
+    {% block body %} {% endblock body %}
+
+</html>

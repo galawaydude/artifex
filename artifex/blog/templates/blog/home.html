@@ -1,0 +1,59 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block body %}
+<main></main>
+<div id="track-header">
+    <h1> Today's Highlights </h1>
+</div>
+
+
+<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <img class="image" src="{% static 'blog/images/crucified.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/dragonWatch.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/friends.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/hairGirl.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/Wing.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/phos.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/raiden.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/SamuraiJack.jpg' %}" draggable="false" />
+    <img class="image" src="{% static 'blog/images/makimEYE.jpg' %}" draggable="false" />
+</div>
+
+<div id="drag-container">
+    <div id="drag">
+        <div id="drag-left">
+            Drag Images to View
+        </div>
+
+        <div id="drag-middle"> </div>
+
+        <div id="drag-right">
+            Drag Images to View
+        </div>
+    </div>
+
+    <div id="drag">
+        <div id="drag-left">
+            <i class="fa-solid fa-arrow-right fa-flip-horizontal fa-2xl" style="color: #ffb6c1;"
+                draggable="false"></i>
+        </div>
+
+        <div id="drag-middle"> </div>
+
+        <div id="drag-right">
+            <i class="fa-solid fa-arrow-right fa-2xl" style="color: #ffb6c1;" draggable="false"></i>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'blog/trackScript.js' %}"></script>
+
+
+<button id="nav-toggle" type="button" onclick="toggleNav()">
+    <i class="open fa-solid fa-palette fa-xl"></i>
+    <i class="close fa-solid fa-xmark fa-xl"></i>
+</button>
+<script type="text/javascript" src="{% static 'blog/curtainScript.js' %}"></script>
+
+{% endblock %}
