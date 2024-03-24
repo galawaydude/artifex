@@ -10,9 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/eca0eefe21.js" crossorigin="anonymous"></script>
 </head>
-
 <body data-nav="false">
-
     <header>
         <nav class="navbar">
             <a href="{% url 'blog-home' %}" class="nav-branding nav-link"> artifex <i class="fa-solid fa-palette"draggable="false"></i> </a>
@@ -53,9 +51,6 @@
         </nav>
     </header>
     <script src="{% static 'blog/hamburgerScript.js' %}"></script>
-
-    <!-- add background image / text here which would be moved  -->
-
     {% block body %} {% endblock body %}
 
 </html>

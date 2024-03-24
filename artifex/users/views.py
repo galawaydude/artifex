@@ -1,26 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 # Create your views here.
-
 def register(request):
-    if(request.method == 'POST'):
-
-        # getting the post parameters
-        username = request.POST['username']
-        pass1 = request.POST['pass1']
-        pass2 = request.POST['pass2']
-
-        # checking for invalid inputs
-
-
-        # creating the user
-        username = username
-        password = pass1
-        emailID = ''
-        user = User.objects.create_user(username,emailID, pass1)
-        user.save()
-
-        # try to put a success message here
+    if request.method =='POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request,f"Your account has been registered successfully")
+            return redirect('login')
     else:
-        return HttpResponse('404 - found')
+        form = UserCreationForm
+    
+    form = UserCreationForm()
+    return render(request, 'users/register.html', {'form':form})
